@@ -36,7 +36,7 @@ export default function Register() {
           },
         }
       );
-      navigate('/login')
+      navigate('/login', { replace: true })
       // console.log(check);
     } catch (e) {
       
