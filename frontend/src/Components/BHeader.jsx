@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import profilelogo from "../assets/profile.svg";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../hooks/Usercontext";
 export default function BHeader() {
   const { setUserInfo, userInfo } = useContext(UserContext);
-
+  const navigate =useNavigate()
   useEffect(() => {
     axios
       .get("http://localhost:4000/users/profile", {
@@ -26,6 +26,7 @@ export default function BHeader() {
       })
       .then(() => {
         setUserInfo(null);
+        navigate("/")
       })
       .catch((error) => {
         // console.error("Error during logout:", error);
