@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const userRouter=require("./routes/users.router")
 const postsRouter=require("./routes/posts.router")
 const cors=require('cors')
-app.use(cors({credentials:true, origin: 'http://localhost:5173'}))
+app.use(cors({credentials:true, origin:true}))
 app.use(express.json())
 app.use(cookieParser())
 app.use('/uploads',express.static(__dirname+'/uploads'))
